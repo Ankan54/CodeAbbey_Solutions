@@ -1,0 +1,14 @@
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    result=0
+    inputfloat = float(input().strip())
+    result= int(inputfloat * 6)
+    result+=1
+    output+= str(result)+" "
+    
+print(output.strip())
+    
+    
+    
+        
