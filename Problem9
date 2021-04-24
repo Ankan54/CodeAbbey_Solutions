@@ -1,0 +1,20 @@
+from itertools import combinations 
+
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    valid= True
+    inputlist = input().split()
+    inputlist= [int(i) for i in inputlist]
+    comb_list=list(combinations(inputlist,2))
+    for comb in comb_list:
+        rem= list(set(inputlist)-set(comb))
+        if sum(comb)<=rem[0]:
+            valid= False
+            break
+    if valid:
+        output+="1"+" "
+    else:
+        output+="0"+ " "
+        
+print(output.strip())
