@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+inputlist = input().split()
+inputlist = [int(i) for i in inputlist]
+inputlist = inputlist[:-1]
+#
+temp = 0
+swap = 0
+#
+for i in range(len(inputlist) - 1):
+    if inputlist[i] > inputlist[i + 1]:
+        temp = inputlist[i]
+        inputlist[i] = inputlist[i + 1]
+        inputlist[i + 1] = temp
+        swap += 1
+
+
+def checksum(inputlist):
+    seed = 113
+    modulo = 10000007
+    result = 0
+    for i in inputlist:
+        result = (result + i) * seed
+        result = result % modulo
+    return result
+
+
+output = str(swap) + " " + str(checksum(inputlist))
+print(output)
