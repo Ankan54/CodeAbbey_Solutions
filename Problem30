@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+inputstring = input()
+print(inputstring[::-1])
+
+
+    
+    
