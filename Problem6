@@ -1,0 +1,18 @@
+input_num= int(input().strip())
+i=1
+output=""
+while i<=input_num:
+    inputlist= input().split()
+    inputlist= [int(i) for i in inputlist]
+    result= (inputlist[0]/inputlist[1])
+    if int(result) % 2 == 0:
+        decimal= result - int(result)
+        if round(decimal,2) == 0.5:
+            result= int(result)+1
+    else:
+        result= round(result)
+        
+    output+= str(round(result))+" "
+    i+=1
+
+print(output.strip())
