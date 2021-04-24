@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+def sum_of_digit(input_list):
+    result= (input_list[0]*input_list[1]+input_list[2])
+    output=0
+    while result>0:
+        rem= result%10
+        output+=rem
+        result=result//10
+    return str(output)
+
+inputnum= int(input().strip())
+outputlist=""
+for i in range(inputnum):
+    inputlist = input().split()
+    inputlist= [int(i) for i in inputlist]
+    outputlist+= sum_of_digit(inputlist) + " "
+
+print(outputlist.strip())
