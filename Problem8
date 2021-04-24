@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    inputlist = input().split()
+    inputlist= [int(i) for i in inputlist]
+    result= ((2*inputlist[0])+(inputlist[2]-1)*inputlist[1])*(inputlist[2]/2)
+    result= int(result)
+    #result(round(result))
+    output+= str(result)+" "
+    
+print(output.strip())
