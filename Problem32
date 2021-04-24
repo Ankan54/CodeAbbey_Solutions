@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+inputnum = input().strip()
+inputlist= inputnum.split()
+inputlist= [int(i) for i in inputlist]
+
+def find_survivor(n,k):
+    if n==1:
+        return 1
+    else:
+        return (find_survivor(n-1,k)+ k-1) % n+1
+
+print(find_survivor(inputlist[0],inputlist[1]))
