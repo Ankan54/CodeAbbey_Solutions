@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+inputlist= input().split()
+num1= inputlist[0]
+num2= inputlist[1]
+print(int(num1)+int(num2))
