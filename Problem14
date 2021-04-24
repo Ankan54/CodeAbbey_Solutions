@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+numlist=[]
+signlist= []
+modulo=0
+while True:
+    inputnum = input().strip().split()
+    if inputnum[0] == "%":
+        modulo= int(inputnum[1])
+        break
+    if len(inputnum) == 1:
+        numlist.append(int(inputnum[0]))
+    else:
+        signlist.append(inputnum[0])
+        numlist.append(int(inputnum[1]))
+
+def numeric_operation(num1, num2, sign):
+    return (num1+ num2) if sign=="+" else (num1*num2)
+
+result=0
+for i in range(len(numlist)):
+    result= result%modulo if result>modulo else result
+    if i ==0:
+        continue
+    if i ==1:
+        result= numeric_operation(numlist[0],numlist[i],signlist[i-1])
+        continue
+    result= numeric_operation(result,numlist[i],signlist[i-1])
+    
+result= result%modulo if result>modulo else result
+print(result)
