@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+def generate_next_fibonacci( num_list, count):
+    # generate next number in series and add to the list
+    next = num_list[len(num_list) - 1] + num_list[len(num_list) - 2]
+    num_list.append(next)
+    count += 1
+    return count
+
+def find_fibonacci_index():
+    # main function
+    inputnum = int(input().strip())
+    output = ""
+    for num in range(inputnum):
+        num_list = [0, 1]
+        count = 1
+        input_num = int(input().strip())
+        if input_num== 0:
+            output+="0"+" "
+            continue
+        while num_list[len(num_list) - 1] < input_num:
+            count = generate_next_fibonacci(num_list, count)
+        output += str(count) + " "
+    print(output.strip())
+
+find_fibonacci_index()
