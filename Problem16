@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    inputlist = input().split()
+    inputlist= [int(i) for i in inputlist]
+    result= round(sum(inputlist)/(len(inputlist)-1),2) +0.01
+    result= round(result)
+    output+= str(result)+" "
+
+print(output.strip())
