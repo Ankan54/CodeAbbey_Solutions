@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+inputlist = input().split()
+inputstring= input().split()
+output=""
+limit= int(inputlist[1])
+
+for i in range(1,limit+1):
+    count=0
+    for num in inputstring:
+        if int(num)== i:
+            count+=1
+    output+= str(count) + " "
+
+print(output.strip())
