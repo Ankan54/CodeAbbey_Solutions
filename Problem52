@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+inputnum = int(input().strip())
+output = ""
+for num in range(inputnum):
+    inputlist = input().split()
+    inputlist = [int(i) for i in inputlist]
+    result=""
+    match_length = (inputlist[0]**2 + inputlist[1]**2)**0.5
+    if inputlist[2] == match_length:
+        result= "R"
+    elif inputlist[2] > match_length:
+        result= "O"
+    elif inputlist[2] < match_length:
+        result= "A"
+    output+=result + " "
+
+print(output.strip())
