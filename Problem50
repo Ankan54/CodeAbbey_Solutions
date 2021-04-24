@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    inputstring = input()
+    filterstring=""
+    reversestring= ""
+    for char in inputstring:
+        if char.isalpha():
+            filterstring+= char.lower()
+    reversestring= filterstring[::-1]
+    if filterstring != reversestring:
+        output+="N"+" "
+    else:
+        output+="Y"+ " "
+print(output.strip())
