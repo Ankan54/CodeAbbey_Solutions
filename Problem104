@@ -1,0 +1,19 @@
+#! usr/bin/env python
+import math
+def find_length(x1,y1,x2,y2):
+    result= ((x2-x1)**2+(y2-y1)**2)
+    result= math.sqrt(result)
+    return result
+inputnum = int(input().strip())
+output = ""
+for num in range(inputnum):
+    inputlist = input().split()
+    inputlist= [int(i) for i in inputlist]
+    a= find_length(inputlist[0],inputlist[1],inputlist[2],inputlist[3])
+    b = find_length(inputlist[2],inputlist[3],inputlist[4],inputlist[5])
+    c = find_length(inputlist[4],inputlist[5],inputlist[0],inputlist[1])
+    s= (a+b+c)/2
+    result= s*(s-a)*(s-b)*(s-c)
+    result= math.sqrt(result)
+    output+= str(round(result,7))+" "
+print(output.strip())
