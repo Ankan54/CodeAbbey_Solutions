@@ -1,0 +1,10 @@
+inputnum = int(input().strip())
+output = ""
+for num in range(inputnum):
+    inputlist = input().split()
+    inputlist = [int(i) for i in inputlist]
+    rem1= inputlist[0]%6
+    rem2= inputlist[1]%6
+    output+= str(rem1+rem2+2)+" "
+    
+print(output.strip())
