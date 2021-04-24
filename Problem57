@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+inputnum= input()
+inputlist = input().split()
+templist= [float(i) for i in inputlist]
+for i in range(1,len(inputlist)-1):
+    temp= (templist[i-1]+templist[i]+templist[i+1])/3
+    inputlist[i]= str(temp)
+print(' '.join(map(str,inputlist)))
