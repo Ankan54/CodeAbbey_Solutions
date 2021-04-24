@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    inputlist = input().split()
+    inputlist= [float(i) for i in inputlist]
+    bmi= inputlist[0] / (inputlist[1]**2)
+    if bmi< 18.5:
+        output+= "under"+" "
+    elif 18.5<= bmi < 25.0:
+        output+="normal"+" "
+    elif 25.0<= bmi < 30.0:
+        output+="over"+" "
+    elif bmi> 30.0:
+        output+="obese"+" "
+        
+print(output.strip())
+    
