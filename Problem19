@@ -1,0 +1,31 @@
+inputnum = int(input().strip())
+output = ""
+def find_balance(inputstring):
+    open_bracket = ["(", "[", "{", "<"]
+    close_bracket = [")", "]", "}", ">"]
+    temp_list = []
+    temp_list_close=[]
+    for char in inputstring:
+        if char in open_bracket:
+            temp_list.append(char)
+        elif char in close_bracket:
+            temp_list_close.append(char)
+            if len(temp_list)>0:
+                if open_bracket[close_bracket.index(char)] != temp_list[len(temp_list)-1]:
+                    return False
+                else:
+                    temp_list.pop()
+                    temp_list_close.pop()
+    if len(temp_list)==0 and len(temp_list_close)==0:
+        return True
+    else:
+        return False
+for num in range(inputnum):
+    inputstring = input().strip()
+    if find_balance(inputstring):
+        output+="1"+" "
+    else:
+        output+="0"+ " "
+
+print(output.strip())
+
