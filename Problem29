@@ -1,0 +1,15 @@
+input_num= input()
+input_list= input().split()
+temp_list= input_list
+input_list= [int(i) for i in input_list]
+output=""
+for i in range(len(input_list)-1):
+    temp = 0
+    for j in range(len(input_list)-1):
+        if input_list[j]>input_list[j+1]:
+            temp= input_list[j]
+            input_list[j]= input_list[j+1]
+            input_list[j+1]= temp
+for number in input_list:
+    output+= str((temp_list.index(str(number))+1))+" "
+print(output.strip())
