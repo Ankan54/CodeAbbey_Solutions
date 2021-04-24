@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+def vowel_count(sentence):
+    vowel_list= ["a","e","i","o","u","y"]
+    count=0
+    for char in sentence:
+        if char.lower() in vowel_list:
+            count+=1
+    return count
+
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    input_str = input()
+    output+= str(vowel_count(input_str))+ " "
+    
+print(output.strip())
