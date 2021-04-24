@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+totalnum=int(input())
+numlist= input().split()
+output=0
+for num in numlist:
+    output+= int(num)
+
+print(output)
