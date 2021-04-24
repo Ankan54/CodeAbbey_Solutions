@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+inputnum= int(input().strip())
+output=""
+for i in range(inputnum):
+    inputlist = input().split()
+    inputlist= [int(i) for i in inputlist]
+    day1_in_second= (inputlist[0]*86400) + (inputlist[1]*3600) + (inputlist[2]*60) + inputlist[3]
+    day2_in_second= (inputlist[4]*86400) + (inputlist[5]*3600) + (inputlist[6]*60) + inputlist[7]
+    diff_days_in_second= day2_in_second- day1_in_second
+    days = diff_days_in_second//86400
+    rem = diff_days_in_second % 86400
+    hours= rem //3600
+    rem= rem%3600
+    minutes= rem//60
+    seconds= rem%60
+    output+= "({} {} {} {})".format(days, hours, minutes, seconds) +" "
+
+print(output.strip())
