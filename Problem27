@@ -1,0 +1,20 @@
+num_item= input()
+inputlist = input().split()
+inputlist = [int(i) for i in inputlist]
+swap=0
+pass_num=0
+for i in range(len(inputlist)-1):
+    bswap = False
+    pass_num += 1
+    for j in range(len(inputlist)-1):
+        temp=0
+        if inputlist[j]>inputlist[j+1]:
+            temp= inputlist[j]
+            inputlist[j]= inputlist[j+1]
+            inputlist[j+1]= temp
+            bswap= True
+            swap+=1
+    if bswap== False:
+        break
+
+print(str(pass_num)+" "+str(swap))
